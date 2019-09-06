@@ -11,6 +11,11 @@
 		D7E1B9FE23231333009E876F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E1B9FC23231333009E876F /* Main.storyboard */; };
 		D7E1BA0023231333009E876F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E1B9FF23231333009E876F /* Assets.xcassets */; };
 		D7E1BA0323231333009E876F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E1BA0123231333009E876F /* LaunchScreen.storyboard */; };
+		D7E1BA0E23231774009E876F /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1BA0D23231774009E876F /* SearchTableViewCell.swift */; };
+		D7E1BA12232317AD009E876F /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1BA11232317AD009E876F /* SearchResult.swift */; };
+		D7E1BA1423231AD9009E876F /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1BA1323231AD9009E876F /* ResultType.swift */; };
+		D7E1BA1623231C16009E876F /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1BA1523231C16009E876F /* SearchResultController.swift */; };
+		D7E1BA1823232564009E876F /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1BA1723232564009E876F /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		D7E1B9FF23231333009E876F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7E1BA0223231333009E876F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7E1BA0423231333009E876F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7E1BA0D23231774009E876F /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchTableViewCell.swift; path = iTunesSearch/Views/SearchTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		D7E1BA11232317AD009E876F /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		D7E1BA1323231AD9009E876F /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		D7E1BA1523231C16009E876F /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		D7E1BA1723232564009E876F /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +77,8 @@
 		D7E1BA0A2323133C009E876F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D7E1BA1523231C16009E876F /* SearchResultController.swift */,
+				D7E1BA1723232564009E876F /* SearchResultsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -74,6 +86,8 @@
 		D7E1BA0B23231346009E876F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D7E1BA11232317AD009E876F /* SearchResult.swift */,
+				D7E1BA1323231AD9009E876F /* ResultType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -81,6 +95,7 @@
 		D7E1BA0C23231350009E876F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D7E1BA0D23231774009E876F /* SearchTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,7 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E1BA1423231AD9009E876F /* ResultType.swift in Sources */,
 				D7E1B9F923231333009E876F /* AppDelegate.swift in Sources */,
+				D7E1BA1823232564009E876F /* SearchResultsTableViewController.swift in Sources */,
+				D7E1BA12232317AD009E876F /* SearchResult.swift in Sources */,
+				D7E1BA0E23231774009E876F /* SearchTableViewCell.swift in Sources */,
+				D7E1BA1623231C16009E876F /* SearchResultController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
