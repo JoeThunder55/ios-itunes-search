@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XjV-UF-qOz">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--iTunes Search-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iTunesSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tTv-8c-SKY">
+                                <rect key="frame" x="152" y="7" width="110" height="50"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cd2-zc-V9J">
+                                <rect key="frame" x="0.0" y="140" width="414" height="50"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6xK-GW-dl7">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                        <segments>
+                                            <segment title="Apps"/>
+                                            <segment title="Music"/>
+                                            <segment title="Movies" width="137.33333333333334"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dlg-zU-UwO"/>
+                                </constraints>
+                            </stackView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Rqh-rm-sWK">
+                                <rect key="frame" x="0.0" y="190" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="YfI-3l-37R"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mqn-8e-86p">
+                                <rect key="frame" x="0.0" y="234" width="414" height="662"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cd2-zc-V9J" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2Mq-j0-Jxt"/>
+                            <constraint firstItem="Rqh-rm-sWK" firstAttribute="centerX" secondItem="tTv-8c-SKY" secondAttribute="centerX" id="BVd-oO-ZJf"/>
+                            <constraint firstItem="Rqh-rm-sWK" firstAttribute="top" secondItem="cd2-zc-V9J" secondAttribute="bottom" id="DZ2-pY-TKs"/>
+                            <constraint firstItem="Mqn-8e-86p" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="M7n-Af-YVO"/>
+                            <constraint firstItem="cd2-zc-V9J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RAb-bY-aM9"/>
+                            <constraint firstItem="Mqn-8e-86p" firstAttribute="top" secondItem="Rqh-rm-sWK" secondAttribute="bottom" id="RsL-sR-jgB"/>
+                            <constraint firstItem="cd2-zc-V9J" firstAttribute="top" secondItem="tTv-8c-SKY" secondAttribute="bottom" constant="83" id="T11-a9-suu"/>
+                            <constraint firstItem="cd2-zc-V9J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XYF-sw-uGz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cd2-zc-V9J" secondAttribute="trailing" id="Xlw-xD-r5W"/>
+                            <constraint firstItem="tTv-8c-SKY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="7" id="Zzg-Ze-26b"/>
+                            <constraint firstItem="Mqn-8e-86p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="i03-ZC-Yf6"/>
+                            <constraint firstItem="Rqh-rm-sWK" firstAttribute="leading" secondItem="cd2-zc-V9J" secondAttribute="leading" id="lhC-DB-gIR"/>
+                            <constraint firstAttribute="bottom" secondItem="Mqn-8e-86p" secondAttribute="bottom" id="row-Z3-uNd"/>
+                            <constraint firstItem="Rqh-rm-sWK" firstAttribute="trailing" secondItem="cd2-zc-V9J" secondAttribute="trailing" id="vak-PA-Uno"/>
+                            <constraint firstItem="tTv-8c-SKY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="152" id="yri-WU-gCz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="iTunes Search" id="auH-fN-7nJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="117.85714285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tk7-wD-suJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XjV-UF-qOz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="C8I-5l-AgH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zi5-2o-C65"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="baj-zX-uV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="118"/>
+        </scene>
+    </scenes>
+</document>
