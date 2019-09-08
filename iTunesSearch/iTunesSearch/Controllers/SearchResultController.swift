@@ -7,19 +7,19 @@
 //
 
 import Foundation
+class SearchResultsController {
 
-let baseURL = URL(string: "")
+let baseURL = URL(string: "https://itunes.apple.com/search")!
 var searchResult: [SearchResult] = []
 
 
 func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
-    guard let baseURL = baseURL else {
-        completion(<#Error?#>)
-        return }
+
     var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-    let searchTermQueryItem = URLQueryItem(name: "search", value: searchTerm)
-    urlComponents?.queryItems = [searchTermQueryItem]
-    
+    let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
+    let resultsTermQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
+    urlComponents?.queryItems = [searchTermQueryItem, resultsTermQueryItem]
+    print(urlComponents)
     guard let requestURL = urlComponents?.url else {
         print("Request URL is nil, man.")
         return
@@ -40,12 +40,17 @@ func performSearch(searchTerm: String, resultType: ResultType, completion: @esca
         let jsonDecoder = JSONDecoder()
         do {
             let searchResults = try jsonDecoder.decode(SearchResults.self, from: data)
-            searchResult = searchResults.results
+            self.searchResult = searchResults.results
         } catch {
             print("Hey Dude. Unable to decode into person search object: \(error)")
         }
-        completion(<#Error?#>)
+        
+        completion(error)
         }.resume()
+    }
+  
     
-
+ 
 }
+
+
