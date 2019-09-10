@@ -15,29 +15,19 @@ class SearchResultsTableViewController: UIViewController {
     @IBOutlet weak var filterController: UISegmentedControl!
     
     let searchResultsController = SearchResultsController()
-    var type: ResultType?
+    var type: ResultType = .software
     
     private var filteredAndSortedResults: [SearchResult] = [] {
-        didSet{
+        didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
-            
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchResultsController.performSearch(searchTerm: "Jamiroquai", resultType: .musicTrack) { error in
-            if let error = error {
-                print("Hey Dude. There was an Error: \(error)")
-                return
-            }
-            DispatchQueue.main.sync {
-                self.tableView.reloadData()
-            }
-        }
+ 
         
     }
     
@@ -46,8 +36,11 @@ class SearchResultsTableViewController: UIViewController {
         var updatedResults: [SearchResult]
         switch sender.selectedSegmentIndex {
         case 0: updatedResults = searchResultsController.searchResult.filter {$0.title == "Apps"}
+                type = .software
         case 1: updatedResults = searchResultsController.searchResult.filter {$0.title == "Music"}
-        case 2:updatedResults = searchResultsController.searchResult.filter {$0.title == "Movies"}
+                type = .musicTrack
+        case 2: updatedResults = searchResultsController.searchResult.filter {$0.title == "Movies"}
+                type = .movie
         default: updatedResults = searchResultsController.searchResult
         }
         filteredAndSortedResults = updatedResults
@@ -58,22 +51,18 @@ class SearchResultsTableViewController: UIViewController {
 // MARK: - TableView Extension
 extension SearchResultsTableViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredAndSortedResults.count
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell", for: indexPath) as? SearchTableViewCell else { return UITableViewCell()}
         
-        let results = searchResultsController.searchResult[indexPath.row]
+        let results = filteredAndSortedResults[indexPath.row]
         cell.result = results
         return cell
-        
     }
     
-    
-   
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredAndSortedResults.count
+    }
+
 }
 
 // MARK: - Search Bar Extension
@@ -83,16 +72,15 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         guard let searchTerm = searchBar.text else {return}
 
         
-        searchResultsController.performSearch(searchTerm: searchTerm, resultType: type ?? .musicTrack) { error in
+        searchResultsController.performSearch(searchTerm: searchTerm, resultType: type) { error in
             if let error = error {
                 print("Hey Dude. There was an Error: \(error)")
                 return
             }
-            DispatchQueue.main.sync {
-                self.tableView.reloadData()
-            }
+            
+            self.filteredAndSortedResults = self.searchResultsController.searchResult
+          
         }
-        
         
     }
 }

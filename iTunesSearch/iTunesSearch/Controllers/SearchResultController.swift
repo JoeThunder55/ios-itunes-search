@@ -19,7 +19,7 @@ func performSearch(searchTerm: String, resultType: ResultType, completion: @esca
     let searchTermQueryItem = URLQueryItem(name: "term", value: searchTerm)
     let resultsTermQueryItem = URLQueryItem(name: "entity", value: resultType.rawValue)
     urlComponents?.queryItems = [searchTermQueryItem, resultsTermQueryItem]
-    print(urlComponents)
+
     guard let requestURL = urlComponents?.url else {
         print("Request URL is nil, man.")
         return

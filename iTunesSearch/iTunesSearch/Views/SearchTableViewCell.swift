@@ -21,7 +21,7 @@ class SearchTableViewCell: UITableViewCell {
     func updateView() {
         guard let result = result else { return }
         titleLabel.text = result.title
-        titleLabel.text = result.creator
+        authorLabel.text = result.creator
     }
 
 }
